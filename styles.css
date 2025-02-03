@@ -1,0 +1,123 @@
+@import url(https://fonts.bunny.net/css?family=overpass:400,700);
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Overpass', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --Orange: hsl(25, 97%, 53%);
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Very-Dark-Blue);
+    flex-direction: column;
+}
+
+.main {
+    background-color: var(--Dark-Blue);
+    padding: 2rem;
+    border-radius: 2rem;
+    max-width: 27rem;
+    width: 90%;
+}
+
+.the_svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.274);
+}
+
+.heading {
+    font-size: 2.3rem;
+    color: white;
+    padding-top: 2rem;
+}
+
+.text {
+    color: var(--Light-Grey);
+    padding: 1rem 0;
+}
+
+.all_the_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    background-color: rgba(255, 255, 255, 0.062);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 1.4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 700;
+    height: 4rem;
+    width: 4rem;
+    max-height: 4rem;
+    max-width: 4rem;
+    transition: background-color 200ms ease, color 200ms ease;
+
+    &:hover {
+        background-color: var(--Orange);
+        color: var(--Very-Dark-Blue);
+    }
+}
+
+.submit_button {
+    width: 100%;
+    padding: 1rem;
+    margin: 1.5rem 0 0 0;
+    border-radius: 3rem;
+    border: none;
+    background-color: var(--Orange);
+    font-weight: 700;
+    font-size: 1.08rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 100ms ease;
+
+    &:hover {
+        background-color: white;
+    }
+}
+
+.added_attribute {
+    background-color: white;
+    color: black;
+}
+
+
+
+@media(max-width:31.25rem) {
+
+    .main {
+        padding: 1.5rem;
+    }
+
+    .buttons {
+        height: 3.3rem;
+        width: 3.3rem;
+        font-size: 1rem;
+    }
+}
