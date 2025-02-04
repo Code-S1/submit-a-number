@@ -122,11 +122,10 @@
 
 </body>
 <script>
-    
-    
-
-
-
+   const selectedNumber = localStorage.getItem('selectedNumber');
+if (selectedNumber) {
+    document.getElementById('theSelectedText').innerHTML = selectedNumber;
+}
 
 </script>
 

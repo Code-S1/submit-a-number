@@ -1,59 +1,39 @@
-let theFirstButton = document.getElementById('firstButton');
-let theSecondButton = document.getElementById('secondButton');
-let theThirdButton = document.getElementById('thirdButton');
-let theFourthButton = document.getElementById('fourthButton');
-let theFifthButton = document.getElementById('fifthButton');
+const buttons = document.querySelectorAll('.buttons');
+const submitButton = document.getElementById('goToPage');
+
 function removeBackgroundColor() {
-    theFirstButton.classList.remove('added_attribute');
-    theSecondButton.classList.remove('added_attribute');
-    theThirdButton.classList.remove('added_attribute');
-    theFourthButton.classList.remove('added_attribute');
-    theFifthButton.classList.remove('added_attribute');
-}
-theFirstButton.addEventListener('click', theFirstButtonFunction);
-function theFirstButtonFunction() {
-    removeBackgroundColor();
-    theFirstButton.classList.add('added_attribute');
-}
-theSecondButton.addEventListener('click', theSecondButtonFunction);
-function theSecondButtonFunction() {
-    removeBackgroundColor();
-    theSecondButton.classList.add('added_attribute');
-}
-theThirdButton.addEventListener('click', theThirdButtonFunction);
-function theThirdButtonFunction() {
-    removeBackgroundColor();
-    theThirdButton.classList.add('added_attribute');
+    buttons.forEach(button => button.classList.remove('added_attribute'));
 }
 
-theFourthButton.addEventListener('click', theFourthButtonFunction);
-function theFourthButtonFunction() {
-    removeBackgroundColor();
-    theFourthButton.classList.add('added_attribute');
-}
-theFifthButton.addEventListener('click', theFifthButtonFunction);
-function theFifthButtonFunction() {
-    removeBackgroundColor();
-    theFifthButton.classList.add('added_attribute');
-}
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        removeBackgroundColor();
+        button.classList.add('added_attribute');
+    });
+});
 
-
-
-let theSubmitButton = document.getElementById('goToPage');
-theSubmitButton.addEventListener('click', checkAndGoToPage)
-function checkAndGoToPage() {
-    if (
-        theFirstButton.classList.contains('added_attribute') ||
-        theSecondButton.classList.contains('added_attribute') ||
-        theThirdButton.classList.contains('added_attribute') ||
-        theFourthButton.classList.contains('added_attribute') ||
-        theFifthButton.classList.contains('added_attribute')
-    ) {
+submitButton.addEventListener('click', () => {
+    const selectedButton = document.querySelector('.buttons.added_attribute');
+    if (selectedButton) {
+        localStorage.setItem('selectedNumber', selectedButton.textContent);
         window.location.href = 'index2.html';
     } else {
         alert('Select a number first!!!!');
     }
-}
+});
+localStorage.setItem('first', document.getElementById('firstButton').classList.contains('added_attribute'));
+localStorage.setItem('second', document.getElementById('secondButton').classList.contains('added_attribute'));
+localStorage.setItem('third', document.getElementById('thirdButton').classList.contains('added_attribute'));
+localStorage.setItem('fourth', document.getElementById('fourthButton').classList.contains('added_attribute'));
+localStorage.setItem('fifth', document.getElementById('fifthButton').classList.contains('added_attribute'));
+
+
+
+// localStorage.setItem('on', document.getElementById('firstButton').classList.contains('added_attribute'));
+// localStorage.setItem('to', document.getElementById('secondButton').classList.contains('added_attribute'));
+// localStorage.setItem('thee', document.getElementById('thirdButton').classList.contains('added_attribute'));
+// localStorage.setItem('fore', document.getElementById('fourthButton').classList.contains('added_attribute'));
+// localStorage.setItem('fiv', document.getElementById('fifthButton').classList.contains('added_attribute'));
 
 
 
