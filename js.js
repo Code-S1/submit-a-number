@@ -21,11 +21,6 @@ submitButton.addEventListener('click', () => {
         alert('Select a number first!!!!');
     }
 });
-localStorage.setItem('first', document.getElementById('firstButton').classList.contains('added_attribute'));
-localStorage.setItem('second', document.getElementById('secondButton').classList.contains('added_attribute'));
-localStorage.setItem('third', document.getElementById('thirdButton').classList.contains('added_attribute'));
-localStorage.setItem('fourth', document.getElementById('fourthButton').classList.contains('added_attribute'));
-localStorage.setItem('fifth', document.getElementById('fifthButton').classList.contains('added_attribute'));
 
 
 
